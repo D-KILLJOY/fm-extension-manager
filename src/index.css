@@ -123,6 +123,7 @@ body {
     border-radius: 0.8rem;
     margin-bottom: 1rem;
     color: var(--color-3);
+    cursor: pointer;
 }
 
 .cancel {
@@ -158,6 +159,7 @@ body {
     height: 4.5rem;
     background-color: var(--color-2);
     border: none;
+    cursor: pointer;
 }
 
 .filter__nav {
@@ -195,6 +197,7 @@ body {
     box-shadow: 0px 1px 4px -1px var(--color-4);
     -webkit-box-shadow: 0px 1px 4px -1px var(--color-4);
     -moz-box-shadow: 0px 1px 4px -1px var(--color-4);
+    cursor: pointer;
 }
 
 .filter__btn--active {
@@ -254,6 +257,7 @@ body {
     font-family: "Noto sans";
     color: var(--color-8);
     background-color: var(--color-3);
+    cursor: pointer;
 }
 
 .act__tgl {
