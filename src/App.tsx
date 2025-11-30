@@ -82,6 +82,7 @@ function App() {
                                 tabIndex={0}
                                 role="switch"
                                 aria-checked={item.isActive}
+                                aria-label="Active toggle"
                                 onKeyDown={(e) =>
                                     e.key === "Enter" && actTgl(item.name)
                                 }
