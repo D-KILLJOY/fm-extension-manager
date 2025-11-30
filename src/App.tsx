@@ -71,6 +71,7 @@ function App() {
                         </div>
                         <div className="control">
                             <button
+                                type="button"
                                 onClick={() => mrkExt(item.name)}
                                 className="rmv__btn"
                             >
@@ -78,6 +79,12 @@ function App() {
                             </button>
                             <div
                                 onClick={() => actTgl(item.name)}
+                                tabIndex={0}
+                                role="switch"
+                                aria-checked={item.isActive}
+                                onKeyDown={(e) =>
+                                    e.key === "Enter" && actTgl(item.name)
+                                }
                                 className={`act__tgl ${
                                     item.isActive ? "act__tgl--active" : ""
                                 }`}
@@ -99,37 +106,45 @@ function App() {
 
     return (
         <main className="main__con">
-            {modal === true && <div className="modal"></div>}
             {modal === true && (
-                <div className="prompt ">
-                    <p>
-                        this action would remove this extension{" "}
-                        <span className="warn">"{mrkdExt}"</span>
-                    </p>
-                    <p>Do you wish to Proceed ?</p>
-                    <div className="prompt__btns__con">
-                        <button
-                            onClick={() => modalControl()}
-                            className="prompt__btn cancel"
-                        >
-                            cancel
-                        </button>
-                        <button
-                            onClick={() => delEXtn()}
-                            className="prompt__btn confirm"
-                        >
-                            confirm
-                        </button>
+                <div className="modal">
+                    <div className="prompt ">
+                        <p>
+                            this action would remove this extension{" "}
+                            <span className="warn">"{mrkdExt}"</span>
+                        </p>
+                        <p>Do you wish to Proceed ?</p>
+                        <div className="prompt__btns__con">
+                            <button
+                                type="button"
+                                onClick={() => modalControl()}
+                                className="prompt__btn cancel"
+                            >
+                                cancel
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => delEXtn()}
+                                className="prompt__btn confirm"
+                            >
+                                confirm
+                            </button>
+                        </div>
                     </div>
                 </div>
             )}
+
             <nav className="main__nav">
                 {theme === "dark" ? (
                     <img src={logoDark} className="logo" alt="" />
                 ) : (
                     <img src={logoLight} className="logo" alt="" />
                 )}
-                <button onClick={themeToggle} className="theme__btn">
+                <button
+                    type="button"
+                    onClick={themeToggle}
+                    className="theme__btn"
+                >
                     {theme === "dark" ? (
                         <img src={light} alt="" />
                     ) : (
@@ -141,6 +156,7 @@ function App() {
                 <h1 className="main__header">Extensions list</h1>
                 <div className="filter__btns__con">
                     <button
+                        type="button"
                         onClick={() => filterMode("all")}
                         className={`filter__btn ${
                             extFtr === "all" ? "filter__btn--active" : ""
@@ -149,6 +165,7 @@ function App() {
                         all
                     </button>
                     <button
+                        type="button"
                         onClick={() => filterMode("active")}
                         className={`filter__btn ${
                             extFtr === "active" ? "filter__btn--active" : ""
@@ -157,6 +174,7 @@ function App() {
                         active
                     </button>
                     <button
+                        type="button"
                         onClick={() => filterMode("inactive")}
                         className={`filter__btn ${
                             extFtr === "inactive" ? "filter__btn--active" : ""

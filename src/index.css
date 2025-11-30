@@ -72,18 +72,19 @@ body {
     background-color: hsla(0, 0%, 0%, 0.25);
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .prompt {
     width: 90%;
     max-width: 40rem;
     border-radius: 1.6rem;
-    position: fixed;
-    z-index: 999;
     background-color: var(--color-1);
     text-transform: capitalize;
     font-family: var(--font);
@@ -91,10 +92,6 @@ body {
     text-align: center;
     font-size: 1.9rem;
     padding: 1.6rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 40rem;
 }
 
 .warn {
@@ -108,12 +105,11 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 2rem;
+    margin-block-start: 2rem;
 }
 
 .prompt__btn {
     border: none;
-    background: va;
     text-transform: capitalize;
     font-family: var(--font);
     font-size: 1.8rem;
@@ -121,7 +117,7 @@ body {
     width: 10rem;
     padding: 0.5rem 1rem;
     border-radius: 0.8rem;
-    margin-bottom: 1rem;
+    margin-block-end: 1rem;
     color: var(--color-3);
     cursor: pointer;
 }
@@ -146,7 +142,7 @@ body {
     box-shadow: 0px 2px 5px -1px var(--color-4);
     -webkit-box-shadow: 0px 2px 5px -1px var(--color-4);
     -moz-box-shadow: 0px 2px 5px -1px var(--color-4);
-    margin-bottom: 3rem;
+    margin-block-end: 3rem;
     margin-inline: auto;
 }
 
@@ -162,6 +158,10 @@ body {
     cursor: pointer;
 }
 
+.theme__btn:hover {
+    background-color: hsl(226, 11%, 37%);
+}
+
 .filter__nav {
     display: flex;
     flex-direction: column;
@@ -174,7 +174,7 @@ body {
     color: var(--color-8);
     font-size: 3.2rem;
     text-transform: capitalize;
-    margin-bottom: 2rem;
+    margin-block-end: 2rem;
 }
 
 .filter__btns__con {
@@ -182,7 +182,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
-    margin-bottom: 1rem;
+    margin-block-end: 1rem;
 }
 
 .filter__btn {
@@ -191,7 +191,7 @@ body {
     font-size: 1.6rem;
     text-transform: capitalize;
     border-radius: 10rem;
-    font-family: "Noto sans";
+    font-family: "Noto sans", sans-serif;
     background-color: var(--color-3);
     color: var(--color-8);
     box-shadow: 0px 1px 4px -1px var(--color-4);
@@ -202,7 +202,7 @@ body {
 
 .filter__btn--active {
     background-color: var(--Red500);
-    border-color: var(--Red700);
+    border-color: var(--Red500);
     color: var(--color-2);
     font-weight: 600;
 }
@@ -222,6 +222,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 20rem;
+    width: 100%;
 }
 
 .info {
@@ -233,7 +234,7 @@ body {
 .desc__header {
     color: var(--color-8);
     text-transform: capitalize;
-    margin-bottom: 1rem;
+    margin-block-end: 1rem;
     font-size: 1.6rem;
 }
 
@@ -260,11 +261,22 @@ body {
     cursor: pointer;
 }
 
+.rmv__btn:hover {
+    background-color: var(--Red500);
+    border-color: var(--Red500);
+    color: var(--color-3);
+}
+
+.rmv__btn:focus {
+    background-color: var(--Red500);
+    border-color: var(--Red500);
+    color: var(--color-3);
+}
+
 .act__tgl {
     width: 4rem;
     height: 2rem;
     border-radius: 10rem;
-    background-color: hsl(0, 0%, 80%);
     background-color: var(--color-2);
     position: relative;
     cursor: pointer;
@@ -308,18 +320,16 @@ body {
     }
 
     .exten__con {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         align-items: center;
         justify-content: center;
-        gap: 4rem;
+        gap: 2rem;
     }
 
     .extension {
         border-radius: 1.4rem;
         padding: 1.5rem;
-        width: 30rem;
         height: 20rem;
     }
 
@@ -328,7 +338,7 @@ body {
     }
 
     .desc__header {
-        margin-bottom: 0.5rem;
+        margin-block-end: 0.5rem;
         font-size: 1.6rem;
     }
 
@@ -343,15 +353,15 @@ body {
     }
 }
 
-@media (min-width: 90rem) {
+@media (min-width: 75rem) {
     .exten__con {
         justify-content: space-between;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .extension {
         border-radius: 2rem;
         padding: 1.8rem;
-        width: 40rem;
         height: 20rem;
     }
 
@@ -360,7 +370,7 @@ body {
     }
 
     .desc__header {
-        margin-bottom: 0.5rem;
+        margin-block-end: 0.5rem;
         font-size: 2rem;
     }
 
