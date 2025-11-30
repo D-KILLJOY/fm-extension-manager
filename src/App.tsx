@@ -141,14 +141,15 @@ function App() {
                     <img src={logoLight} className="logo" alt="" />
                 )}
                 <button
+                    aria-label="Change theme"
                     type="button"
                     onClick={themeToggle}
                     className="theme__btn"
                 >
                     {theme === "dark" ? (
-                        <img src={light} alt="" />
+                        <img src={light} alt="sun icon" />
                     ) : (
-                        <img src={dark} alt="" />
+                        <img src={dark} alt="moon icon" />
                     )}
                 </button>
             </nav>

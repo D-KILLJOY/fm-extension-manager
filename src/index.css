@@ -210,7 +210,7 @@ body {
 .exten__con {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .extension {
@@ -255,7 +255,7 @@ body {
     font-size: 1.5rem;
     text-transform: capitalize;
     border-radius: 10rem;
-    font-family: "Noto sans";
+    font-family: "Noto sans", sans-serif;
     color: var(--color-8);
     background-color: var(--color-3);
     cursor: pointer;
@@ -324,7 +324,6 @@ body {
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
         justify-content: center;
-        gap: 2rem;
     }
 
     .extension {
