@@ -1,7 +1,7 @@
-import logoDark from "./assets/images/logo-dark.svg";
-import logoLight from "./assets/images/logo-light.svg";
-import light from "./assets/images/icon-sun.svg";
-import dark from "./assets/images/icon-moon.svg";
+import logoDark from "/images/logo-dark.svg";
+import logoLight from "/images/logo-light.svg";
+import light from "/images/icon-sun.svg";
+import dark from "/images/icon-moon.svg";
 import data from "./data.json";
 
 import { useEffect, useState } from "react";
@@ -61,8 +61,8 @@ function App() {
                         <div className="info">
                             <img
                                 className="ext__img"
-                                src={`src/${item.logo}`}
-                                alt=""
+                                src={item.logo}
+                                alt={`${item.name} logo`}
                             />
                             <article className="desc">
                                 <h2 className="desc__header">{item.name}</h2>
